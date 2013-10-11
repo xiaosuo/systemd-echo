@@ -1,0 +1,17 @@
+[Unit]
+Description=ECHO Server
+After=network.target
+
+[Service]
+ExecStart=@bindir@/systemd-echo
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+NonBlocking=true
+WatchdogSec=10
+User=nobody
+Group=nobody
+Environment=LANG=C
+
+[Install]
+Also=systemd-echo.socket
+WantedBy=multi-user.target
