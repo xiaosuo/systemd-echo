@@ -4,6 +4,7 @@ Description=ECHO Socket
 [Socket]
 ListenStream=7
 ListenDatagram=7
+Backlog=10
 
 [Install]
 WantedBy=sockets.target
